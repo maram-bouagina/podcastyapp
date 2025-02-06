@@ -1,0 +1,58 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height:100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ 
+}
+
+.login-signup-page {
+  display: flex;
+  height: 100vh;
+}
+
+
+.left-side {
+  flex: 1;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px; 
+   max-width: 800px
+}
+.left-side .text {
+  backdrop-filter: blur(15px);
+  padding: 0rem 0rem;
+  margin-bottom: 180px;
+  width: 600px;  backdrop-filter: blur(10px);
+  border-radius:20px;
+  box-shadow: 0 0 50px 0 rgba(0, 175, 172, 0.916);position: fixed;
+}
+.left-side .text h1 {
+  font-size: 4rem;
+  margin: 0px 0;
+   background: linear-gradient(80deg, #007f7f, #7ffaf8a4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight:bolder;padding-top:0;
+
+}
+
+.left-side .text p {
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+
+
+}
+
+.right-side {
+  flex: 1; /* Takes up half of the screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+}

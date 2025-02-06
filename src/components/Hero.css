@@ -1,0 +1,137 @@
+.hero {
+  position: relative;
+  min-height: 100vh;    
+  display: flex;          
+  align-items: center;   
+  justify-content: center;  
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  overflow: hidden; /* Ensures no scrollbars appear */ ; 
+}
+
+.hero-bg-video { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: 0; /* Keeps the video below all content */
+}
+
+.video-container::before {
+  content: ''; /* Necessary for pseudo-elements */
+  position: absolute; /* Must be absolute to overlay correctly */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 1; /* Ensures the gradient is on top of the video */
+  pointer-events: none; /* Allows interaction with the video */
+}
+
+
+.hero-container {
+  display: flex;         
+  align-items: center;     
+  justify-content: center; 
+  max-width: 1280px;        
+  margin: 0 auto;           
+  padding: 4rem 2rem;
+  width: 100%;z-index: 2;
+}
+
+
+.hero-content {
+  position: relative;
+  text-align: center; 
+}
+
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00afaca4, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.hero-cta {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background:  #00afaca4;
+  color: white;
+  border-radius: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cta:hover {
+  background:  white;
+  color: #00afaca4;
+ box-shadow: 0 10px 20px rgba(34, 211, 238, 0.2); 
+  font-weight:bolder;
+}
+
+.hero-cta::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+.hero-cta:hover::after {
+  left: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+ 
+}

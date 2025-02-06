@@ -1,0 +1,121 @@
+/* Header container */
+.header {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 0;
+  color: white;
+  z-index: 9999;
+}
+
+.header.scrolled {
+  background-color: #002b36;
+}
+
+/* Logo styling */
+.logo-img {
+  margin-left: 0;
+  padding: 0;
+  width:150px;
+  height:120px;
+  display: block;
+}
+
+
+/* Navigation bar */
+.nav {
+  display: flex;
+  align-items:center;
+  flex-grow:1;
+  justify-content:flex-end;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content:flex-end;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-btn {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-left: 50px;
+  
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-btn:hover {
+  color: #00afaca4; /* Highlight effect */
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 5px 10px;
+  height: 35px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  padding: 5px;
+  color: #333;
+  width: 200px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.search-icon {
+  height: 20px;
+  width: 20px;
+  color: #333;
+}
+
+/* Authentication buttons */
+.btn {
+  background: none;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left:30px;
+  background-color: #00afaca4;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-right:30px;
+}
+
+div .btn:hover {
+  box-shadow: 0 10px 20px rgba(34, 211, 238, 0.2);
+  color: #00afaca4;
+  background-color: #ffffff;
+  font-weight: bolder;
+}

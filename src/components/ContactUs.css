@@ -1,0 +1,124 @@
+::selection{
+    color:rgb(129, 234, 250);
+    background-color: transparent;
+}
+.super-div {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: row;
+    gap: 12em;
+    align-items: center;
+    position: relative;
+    height: 100vh; 
+
+    
+}
+
+.super-div::before {
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/podcasty-girl.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto; 
+   background-position: center 31%; /* Moves the image to the middle */
+    /* Align image closer to the top */
+ 
+    opacity: 0.3; 
+    z-index: -1;
+}
+
+
+
+.text{
+    color:white;
+    margin-bottom:0;
+    margin-left:8%;
+    display:flex;
+    flex-direction:column;
+    gap:5em
+     
+}
+ h3{
+    text-align: center;backdrop-filter: blur(10px);width:600px;
+    line-height:2em;font-weight: normal;margin-bottom:200px;
+}
+.text h1{
+    backdrop-filter: blur(10px);
+}
+.form-div{
+    color:rgb(129, 234, 250);
+    border-radius:20px;
+    padding: 0.2em 2em 2em 2em;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(218, 215, 215, 0.599);
+    backdrop-filter: blur(10px);
+    margin-top:4em;
+}
+
+
+.form-div:hover{
+    background-color: white;
+    color: black; box-shadow: 0 0 50px 0 rgba(0, 175, 172, 0.916);
+}
+.form-div:hover .h {
+  color:#00afaca4 ;
+}
+
+
+.hf{
+    margin-bottom:0.5em;
+
+    
+}
+p{
+    width:500px
+}
+label.required::before {
+    content: " *";
+    color: red;
+    margin-right:1em;
+}
+
+.input {
+    width: 400px;
+    margin-top: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid   #007f7f;
+    border-radius: 5px;
+    color:  #007f7f
+  }
+  textarea{
+    margin-top: 0.7rem;
+    border-radius: 5px;
+   color: #007f7f;border-color:#007f7f
+  }
+.sub{
+    padding: 1rem 2rem;
+    width: 200px;
+    color:rgb(129, 234, 250);
+    background-color: transparent;
+    box-shadow: 0 0 50px 0 rgb(129, 234, 250);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left:25%;
+    font-weight: bold;
+}
+.form-div:hover .sub{
+    color:black;
+    background-color: white;
+    box-shadow: none; 
+    border:2px solid black
+}
+
+.input-label-text{
+    padding-bottom: 0.7em;
+}
+.err{
+    color: rgb(255, 0, 0);
+    display:inline;
+}
