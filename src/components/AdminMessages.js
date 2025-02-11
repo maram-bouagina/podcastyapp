@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
+import './AdminMessages.css';
+import Header from './Header';
 const AdminMessages = () => {
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState(null);
@@ -27,34 +28,44 @@ const AdminMessages = () => {
   };
 
   return (
-    <div>
-      <h1>Admin Messages</h1>
-      {error && <p>{error}</p>}
-      <table>
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Subject</th>
-            <th>Message</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {messages.map(msg => (
-            <tr key={msg.id}>
-              <td>{msg.username}</td>
-              <td>{msg.email}</td>
-              <td>{msg.subject}</td>
-              <td>{msg.message}</td>
-              <td>
-                <button onClick={() => deleteMessage(msg.id)}>Delete</button>
-              </td>
+    <div className='SuperDiv'>
+    <Header className="headerOtherC" />
+    <div className="admin-messages-container">
+      <div className="admin-messages-content">
+        <h1 className="admin-messages-title">Admin Messages</h1>
+        {error && <p className="admin-messages-error">{error}</p>}
+        <table className="admin-messages-table">
+          <thead>
+            <tr className="admin-messages-table-header">
+              <th className="admin-messages-table-header-cell">Username</th>
+              <th className="admin-messages-table-header-cell">Email</th>
+              <th className="admin-messages-table-header-cell">Subject</th>
+              <th className="admin-messages-table-header-cell">Message</th>
+              <th className="admin-messages-table-header-cell">Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {messages.map(msg => (
+              <tr key={msg.id} className="admin-messages-table-row">
+                <td className="admin-messages-table-cell">{msg.username}</td>
+                <td className="admin-messages-table-cell">{msg.email}</td>
+                <td className="admin-messages-table-cell">{msg.subject}</td>
+                <td className="admin-messages-table-cell">{msg.message}</td>
+                <td className="admin-messages-table-cell">
+                  <button
+                    className="admin-messages-delete-button"
+                    onClick={() => deleteMessage(msg.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
   );
 };
 

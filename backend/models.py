@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
+from sqlalchemy import Column, Integer, Boolean, String, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from .database import Base
 from datetime import datetime
@@ -12,6 +12,7 @@ class User(Base):
     country = Column(String(255), nullable=False)
     organization = Column(String(255), nullable=True)
     password = Column(String(255), nullable=False)
+    role = Column(String(50), default="user") 
 
     podcasts = relationship("Podcast", back_populates="owner")
 

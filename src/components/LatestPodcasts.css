@@ -1,94 +1,171 @@
-/* Ensure the container is centered */
-.video-container {
-  margin-top:5%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;  /* Adjust to start for better alignment */
-    gap: 20px;
-    padding: 20px;
-    margin-bottom: 0rem;
-    min-height: 100vh;
-    flex-wrap: wrap;
-    z-index: 1; /* Allow the content to wrap if the screen is too narrow */
-  }
-  
-  .video-sidebar {
-    flex: 1;
-    max-width: 400px;
-    background-color: #ffffff00;
-    padding: 10px;
-    border: 1px solid #00afac6c;    
-    overflow-y: auto;
-    height: auto;
-    margin-right: 20px;
-    z-index: 1;
+.parent{
+  background-color:white;
+  height: 100vh;
+  display: flex;
+  justify-content: center; 
+  flex-wrap:wrap;
+  align-content: center;
+}
+.headerOtherC{
+  background: linear-gradient(
+    to right,
+    rgba(0, 43, 54, 1) ,
+    rgba(0, 43, 54, 0.85) 50%,
+    rgba(0, 43, 54, 0.6) 100%
+  );
+}
+.app-container {
 
-  }
-  
-  .video-sidebar h2 {
-    margin-top: 10px;
-    font-size: 1.5rem;
-    text-align: center;
-    color: #ffffff;
-
-  }
-  
-  .video-sidebar ul {
-    list-style-type: none;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
-  }
-  
-  .video-sidebar li {
-    margin: 10px 0;
-  }
-  
-  .video-sidebar button {
-    width: 100%;
-    padding: 0px;
-    background-color: #ffffff00;
-    border: 1px solid #00afac00;
-    color: white;
-    text-align: left;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    display: flex;
+}
+
+.video-container-Lp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+  /* White background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+}
+
+/* Sidebar */
+.video-sidebar {
+  flex: 1 1 35%;
+  min-width: 300px;
+  /* White background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+
+}
+
+.video-sidebar .Lph2 {
+  font-size: 1.5rem;
+  margin: 0 0 15px 0;
+  text-align: center;
+  color: #333;
+}
+
+.video-sidebar .Lpul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.video-sidebar .Lpli {
+  margin: 10px 0;
+}
+
+.video-sidebar .Lpbutton {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff; /* White background */
+  border: 1px solid #ddd;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.video-sidebar .Lpbutton:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+  border-color: #007bff; /* Blue border on hover */
+}
+
+.video-sidebar .Lpbutton.active {
+  background-color: #007bff; /* Blue background for active state */
+  color: white; /* White text for active state */
+  border-color: #007bff;
+}
+
+.video-thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.video-sidebar .Lpbutton:hover .video-thumbnail {
+  transform: scale(1.05);
+}
+
+/* Video Player */
+.video-player {
+  flex: 1 1 65%;
+  min-width: 300px;
+  background-color: #fff; /* White background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+ 
+}
+
+.video-player .Lpiframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  border: none;
+
+}
+
+.video-player .Lph3 {
+  font-size: 1.5rem;
+  margin: 15px 0 0 0;
+  color: #333;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .video-container {
+    flex-direction: column;
     align-items: center;
-    gap: 5px;
   }
-  
-  .video-sidebar button:hover {
-    background-color: #00afac6c;
-  }
-  
-  .video-sidebar button.active {
-    background-color: #00afac6c;
-    font-weight: bold;
-  }
-  
-  .video-thumbnail {
-    width: 100px; /* Adjust size of the thumbnail */
-    height: 100px;
-    object-fit: contain;
-  }
-  
+
+  .video-sidebar,
   .video-player {
-    flex: 2;
-    max-width: 800px;
-    background-color: #ffffff00;
-    padding: 20px;
-    border-radius: 10px;
+    flex: 1 1 100%;
+    min-width: auto;
+    margin-bottom: 20px;
   }
-  
-  .video-player iframe {
-    border-radius: 10px;
+
+  .video-player .Lpiframe {
+    height: 300px;
   }
-  
-  .video-player h3 {
-    text-align: left;
-    margin-top: 10px;
-    color: white;
+}
+
+@media (max-width: 480px) {
+  .video-thumbnail {
+    width: 60px;
+    height: 60px;
   }
-  
+
+  .video-sidebar .Lpbutton {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .video-player .Lpiframe {
+    height: 200px;
+  }
+
+  .video-player .Lph3 {
+    font-size: 1.3rem;
+  }
+}

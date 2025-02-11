@@ -24,11 +24,6 @@ const Hero = () => {
             Join thousands of creators who trust Podcasty to bring their stories to life. 
             Professional tools, global distribution, and everything you need to grow your audience.
           </p>
-          <div className="hero-cta-group">
-            <button className="hero-cta">
-              Start Creating Free
-            </button>
-          </div>
         </div>
       </div>
     </section>

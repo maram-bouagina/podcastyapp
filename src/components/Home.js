@@ -12,7 +12,7 @@ const Home = () => {
       {/* <LatestPodcasts /> */}
 
       <footer className="services">
-          <h1>Our Services</h1>
+          <h1 className='homeh1'>Our Services</h1>
           <div className="service-cards">
             <div className="service-card">
             <div className="service-icon">

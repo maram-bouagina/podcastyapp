@@ -1,0 +1,225 @@
+/* Global Wrapper Styles */
+.app-container-mypodcasts {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #f4f4f9; /* Light background color */
+    min-height:100vh;/*Ensure the container spans the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content at the top */
+  
+}
+
+.containerMypodcasts {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%; /* Ensure it takes up the full available width */
+
+}
+
+/* Form Container Styles */
+.form-container {
+    flex: 1 1 35%; /* Takes up to 35% of the container width */
+    min-width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Myform {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.h3AddPod {
+    font-size: 1.5rem;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+.Mylabel {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.Myinput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.Myinput:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.buttonClass {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+}
+
+.Mybutton {
+    background-color: #007f7f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.Mybutton:hover {
+    background-color: #218838;
+}
+
+/* Podcast List Styles */
+.podcast-list {
+    flex: 1 1 65%; /* Takes up to 65% of the container width */
+    min-width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.h2Mypodcasts {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.podcast-scrollable {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-height: 500px; /* Fixed height for scrolling */
+    overflow-y: auto; /* Add vertical scrollbar */
+}
+
+.podcast-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* To position the delete button absolutely */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add space between elements */
+}
+
+.h4title {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+}
+
+.description {
+    font-size: 1rem;
+    color: #555;
+    margin: 0 0 15px 0;
+}
+
+.videoMypodcasts {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.afile {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.afile:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px; 
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: auto; /* Ensure the button width is not too big */
+    align-self: center; /* Center the button horizontally */
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .containerMypodcasts {
+        margin-top: 70%;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .podcast-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-container,
+    .podcast-list {
+        flex: 1 1 100%;
+        min-width: auto;
+    }
+
+    .h2Mypodcasts {
+        font-size: 1.8rem;
+    }
+
+    .h3AddPod {
+        font-size: 1.3rem;
+    }
+
+    .Myinput {
+        padding: 8px;
+    }
+
+    .Mybutton {
+        padding: 8px 12px;
+    }
+
+    .podcast-item {
+        align-items: center; /* Center items vertically */
+    }
+
+    .videoMypodcasts {
+        max-width: 100%; /* Ensure the video takes full width */
+    }
+
+    .delete-button {
+        position: static; /* Reset the position */
+        margin-top: 10px; /* Add space above the button */
+    }
+}

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './LatestPodcasts.css';
 import { SearchContext } from "./searchcontext"; 
 import { useContext } from 'react';
+import Header from './Header';
+
 
 const LatestPodcasts = () => {
   const { valueSearch, setValueSearch } = useContext(SearchContext); // Retrieve search term from context
@@ -55,14 +57,18 @@ const LatestPodcasts = () => {
   };
 
   return (
-    <div className="video-container">
+    <div>
+    <Header className="headerOtherC"/>
+    <div className="parent">
+      
+    <div className="video-container-Lp">
       {/* Sidebar */}
       <div className="video-sidebar">
-        <h2>Playlist</h2>
-        <ul>
+        <h2 className='Lph2'>Playlist</h2>
+        <ul className='Lpul'>
           {videos.length > 0 ? (
             videos.map((video) => (
-              <li key={video.id.videoId}>
+              <li className='Lpli' key={video.id.videoId}>
                 <button
                   onClick={() => setSelectedVideo(video)}
                   className={selectedVideo?.id.videoId === video.id.videoId ? 'active' : ''}
@@ -86,7 +92,8 @@ const LatestPodcasts = () => {
       <div className="video-player">
         {selectedVideo ? (
           <div>
-            <iframe
+            <iframe 
+              className='Lpiframe'
               width="100%"
               height="400"
               src={`https://www.youtube.com/embed/${selectedVideo.id.videoId}`}
@@ -95,13 +102,14 @@ const LatestPodcasts = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            <h3>{cleanTitle(selectedVideo.snippet.title)}</h3>
+            <h3 className='Lph3'>{cleanTitle(selectedVideo.snippet.title)}</h3>
           </div>
         ) : (
-          <p>Select a video from the playlist to play.</p>
+          <p className='Lpp'>Select a video from the playlist to play.</p>
         )}
       </div>
     </div>
+    </div></div>
   );
 };
 export default LatestPodcasts;

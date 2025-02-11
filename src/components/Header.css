@@ -1,68 +1,48 @@
-/* Header container */
+/* Scoped styles for the header */
 .header {
   position: fixed;
   width: 100%;
-  height: 70px;
+  height: 70px; /* Default height */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space between logo and nav content */
   align-items: center;
   background-color: transparent;
-  padding: 0;
+  padding: 0 20px; /* Add some padding for spacing */
   color: white;
   z-index: 9999;
+  transition: background-color 0.3s ease, height 0.3s ease;
 }
 
 .header.scrolled {
   background-color: #002b36;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow when scrolled */
+}
+
+/* Ensure the header doesn't overlap with the hero section */
+.header + .hero {
+  margin-top: 70px; /* Match the default height of the header */
+}
+
+.header.scrolled + .hero {
+  margin-top: 70px; /* Ensure consistent spacing even when scrolled */
 }
 
 /* Logo styling */
-.logo-img {
-  margin-left: 0;
-  padding: 0;
-  width:150px;
-  height:120px;
-  display: block;
+.logo {
+  flex: 0 0 auto; /* Ensure the logo stays fixed on the left */
 }
 
+.logo-img {
+  width: 150px;
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
 
 /* Navigation bar */
 .nav {
   display: flex;
-  align-items:center;
-  flex-grow:1;
-  justify-content:flex-end;
-}
-
-/* Navigation links */
-.nav-links {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  justify-content:flex-end;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.nav-links li {
-  margin-right: 20px;
-}
-
-.nav-btn {
-  background: none;
-  color: white;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  margin-left: 50px;
-  
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.nav-btn:hover {
-  color: #00afaca4; /* Highlight effect */
+  align-items: center;
+  gap: 20px; /* Add spacing between elements */
 }
 
 /* Search bar */
@@ -98,7 +78,42 @@
   color: #333;
 }
 
+/* Navigation links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  gap: 70px; /* Increase spacing between links */
+  margin-left: auto; /* Push links closer to the right */
+}
+
+.nav-links li {
+  margin: 0; /* Remove unnecessary margin */
+}
+
+.nav-btn {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-btn:hover {
+  color: #00afaca4; /* Highlight effect */
+}
+
 /* Authentication buttons */
+.container {
+  margin-left: 70px; /* Add more space between links and login button */
+  position: relative; /* Ensure proper alignment */
+}
+
 .btn {
   background: none;
   border: 1px solid #ffffff;
@@ -107,15 +122,64 @@
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  margin-left:30px;
   background-color: #00afaca4;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin-right:30px;
 }
 
-div .btn:hover {
+.btn:hover {
   box-shadow: 0 10px 20px rgba(34, 211, 238, 0.2);
-  color: #00afaca4;
+  color: #007f7f;
+  border-color:#007f7f ;
   background-color: #ffffff;
   font-weight: bolder;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header {
+    height: auto; /* Allow the header to grow with content */
+    padding: 20px; /* Add more padding for better spacing */
+  }
+
+  .nav {
+    flex-direction: column; /* Stack navigation elements vertically */
+    align-items: flex-end; /* Align all items to the right */
+    gap: 10px; /* Add spacing between stacked elements */
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-end; /* Align links to the right */
+    gap: 15px; /* Add spacing between stacked links */
+    margin-left: 0; /* Reset margin for vertical alignment */
+  }
+
+  .container {
+    margin-left: 0; /* Reset margin for vertical alignment */
+    align-self: flex-end; /* Align the login button to the right */
+  }
+
+  .logo {
+    margin-bottom: 20px; /* Add space below the logo */
+  }
+
+  /* Ensure the hero section remains separated from the header */
+  .header + .hero {
+    margin-top: 120px; /* Adjust margin for larger header height */
+  }
+}
+
+/* Additional fixes for extremely small screens */
+@media (max-width: 480px) {
+  .logo-img {
+    width: 100px; /* Reduce logo size for very small screens */
+  }
+
+  .search-input {
+    width: 150px; /* Reduce search input width */
+  }
+
+  .nav-links {
+    gap: 10px; /* Reduce spacing for very small screens */
+  }
 }

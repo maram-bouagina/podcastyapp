@@ -1,0 +1,152 @@
+/* Main Container Styling */
+.SuperDivSuperAdmin {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 20px;
+    background: white; 
+}
+
+/* Header Styling */
+.headerOtherC {
+    position: fixed; /* Fix header at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.8s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container Styling */
+.superAdmin-container {
+    max-width: 600px;
+    margin: 100px auto 20px; /* Default margin for larger screens */
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease-in-out;
+    box-shadow: 0 10px 20px #00afaca4;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title Styling */
+.create-admin-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    animation: slideIn 0.8s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Form Styling */
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeIn 1.2s ease-in-out;
+    
+ ;
+}
+
+/* Input Field Styling */
+.form-input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    border-color:  #00afaca4;
+    box-shadow: 0 0 8px #00afaca4(0, 123, 255, 0.5);
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25%, 75% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+/* Submit Button Styling */
+.submit-button {
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color:  #039694a4;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0f706fa4;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .superAdmin-container {
+        margin: 500px auto 20px;
+    }
+}
+

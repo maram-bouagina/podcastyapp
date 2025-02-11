@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "./Auth";
+import   "./MyPodcasts.css";
+import Header from "./Header";
 //import { useSelector } from 'react-redux';
 const MyPodcasts = () => {
   const [podcasts, setPodcasts] = useState([]);
@@ -65,54 +67,86 @@ const { userId, token } = useAuth()
   };
 
   return (
-    <div>
-      <h2>Mes Podcasts</h2>
-      <ul>
-      {podcasts.map((podcast) => (
-  <li key={podcast.id}>
-    <h4>{podcast.title}</h4>
-    <p>{podcast.description}</p>
-
-    {/* Check if the file is a video */}
-    {podcast.filename.endsWith(".mp4") ? (
-      <video width="300" controls>
-        <source
-          src={`http://localhost:8000/uploads/${podcast.filename}`}
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
-    ) : (
-      <a href={`http://localhost:8000/uploads/${podcast.filename}`} download>
-        Télécharger
-      </a>
-    )}
-    {/* Delete button */}
-    <button onClick={() => handleDelete(podcast.id)}>Delete</button>
-  </li>
-))}
-      </ul>
-
-      <h3>Ajouter un Podcast</h3>
-      <form onSubmit={handleUpload}>
-        <input
-          type="text"
-          placeholder="Titre"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          required
-        />
-        <input type="file" onChange={(e) => setFile(e.target.files[0])} required />
-        <button type="submit">Uploader</button>
-      </form>
+    <div className="app-container-mypodcasts">
+   <Header className="headerOtherC"/>
+    <div className="containerMypodcasts">
+      <div className="form-container">
+        <form className="Myform" onSubmit={handleUpload}>
+          <h3  className="h3AddPod">Add a podcast</h3>
+          <div>
+            <label className="Mylabel">The title</label>
+            <input
+              type="text"
+              placeholder="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+              className="Myinput"
+            />
+          </div>
+          <div>
+            <label className="Mylabel">The description</label>
+            <input
+              type="text"
+              placeholder="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+              className="Myinput"
+            />
+          </div>
+          <div>
+            <label className="Mylabel">The podcast</label>
+            <input
+              type="file"
+              onChange={(e) => setFile(e.target.files[0])}
+              required
+              className="Myinput"
+            />
+          </div>
+          <div className="buttonClass">
+            <button className="Mybutton" type="submit">
+              Uploader
+            </button>
+          </div>
+        </form>
+      </div>
+  
+      <div className="podcast-list">
+        <h2 className="h2Mypodcasts">My Podcasts</h2>
+        <ul className="podcast-scrollable">
+          {podcasts.map((podcast) => (
+            <li key={podcast.id} className="podcast-item">
+              <h4 className="h4title">{podcast.title}</h4>
+              <p className="description">{podcast.description}</p>
+              {/* Check if the file is a video */}
+              {podcast.filename.endsWith(".mp4") ? (
+                <video className="videoMyPodcasts" width="300" controls>
+                  <source
+                    src={`http://localhost:8000/uploads/${podcast.filename}`}
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
+                <a className="afile" href={`http://localhost:8000/uploads/${podcast.filename}`} download>
+                  Télécharger
+                </a>
+              )}
+              <button
+                className="delete-button"
+                onClick={() => handleDelete(podcast.id)}
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
+  </div>
+  
+   
   );
 };
 

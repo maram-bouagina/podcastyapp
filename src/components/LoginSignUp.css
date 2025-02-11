@@ -1,58 +1,83 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  height:100%;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
- 
-}
-
 .login-signup-page {
   display: flex;
   height: 100vh;
+  flex-direction: row; /* Default to side-by-side layout */
 }
 
-
 .left-side {
-  flex: 1;  
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 100px; 
-   max-width: 800px
+  padding: 20px;
+  max-width: 50%; /* Ensure it doesn't exceed half the width */
 }
+
+
+
 .left-side .text {
   backdrop-filter: blur(15px);
-  padding: 0rem 0rem;
-  margin-bottom: 180px;
-  width: 600px;  backdrop-filter: blur(10px);
-  border-radius:20px;
-  box-shadow: 0 0 50px 0 rgba(0, 175, 172, 0.916);position: fixed;
+  padding: 1rem; /* Adjusted padding */
+  margin-bottom: 20px; /* Reduced margin for smaller screens */
+  width: 90%; /* Use percentage for responsive width */
+  max-width: 600px; /* Limit width on larger screens */
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 0 50px 0 rgba(0, 175, 172, 0.916);
+  position: static; /* Remove fixed positioning for better responsiveness */
 }
+
 .left-side .text h1 {
-  font-size: 4rem;
-  margin: 0px 0;
-   background: linear-gradient(80deg, #007f7f, #7ffaf8a4);
+  font-size: 2.5rem; /* Smaller font size for smaller screens */
+  margin: 0;
+  background: linear-gradient(80deg, #007f7f, #7ffaf8a4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight:bolder;padding-top:0;
-
+  font-weight: bolder;
+  text-align: center; /* Center text */
 }
 
 .left-side .text p {
-  font-size: 2rem;
+  font-size: 1.2rem; /* Smaller font size for smaller screens */
   color: black;
   text-align: center;
-
-
 }
 
 .right-side {
-  flex: 1; /* Takes up half of the screen */
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  flex-direction: column;
+  max-width: 50%; /* Ensure it doesn't exceed half the width */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .login-signup-page {
+    flex-direction: column; /* Stack vertically on smaller screens */
+  }
+
+  .left-side {
+    flex: 0.4; /* Left side takes 40% of the height on smaller screens */
+    padding: 50px;
+  }
+
+  .right-side {
+    flex: 0.6; /* Right side takes 60% of the height on smaller screens */
+    margin-left: 13%;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-side {
+    flex: 0.3; /* Left side takes 30% of the height on very small screens */
+  }
+
+  .right-side {
+    flex: 0.7; /* Right side takes 70% of the height on very small screens */
+    margin-left: 13%;
+  }
 }

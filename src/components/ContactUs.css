@@ -1,124 +1,241 @@
-::selection{
-    color:rgb(129, 234, 250);
+/* General Styles */
+::selection {
+    color: rgb(129, 234, 250);
     background-color: transparent;
 }
+
 .super-div {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     flex-direction: row;
-    gap: 12em;
     align-items: center;
+    justify-content: space-around; /* Center content horizontally */
     position: relative;
-    height: 100vh; 
+    gap: 2em; /* Reduced gap for better spacing */
+    padding: 2rem;
 
-    
+  min-height: 100vh; /* Ensure the container covers at least the viewport height */
+  background-image: url("/podcasty-girl.png"); /* Background image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Optional: Makes the background fixed while scrolling */
 }
 
 .super-div::before {
-    content: ''; 
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("/podcasty-girl.png");
-    background-repeat: no-repeat;
-    background-size: 100% auto; 
-   background-position: center 31%; /* Moves the image to the middle */
-    /* Align image closer to the top */
- 
-    opacity: 0.3; 
-    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+    z-index: 0; 
 }
 
-
-
-.text{
-    color:white;
-    margin-bottom:0;
-    margin-left:8%;
-    display:flex;
-    flex-direction:column;
-    gap:5em
-     
+.text {
+    color: white;
+    margin-bottom: 0;
+    flex-basis: 40%; /* Dynamically adjust width */
+    max-width: 40%; /* Limit maximum width */
+    display: flex;
+    flex-direction: column;
+    gap: 2em; /* Reduce gap for smaller screens */
 }
- h3{
-    text-align: center;backdrop-filter: blur(10px);width:600px;
-    line-height:2em;font-weight: normal;margin-bottom:200px;
-}
-.text h1{
+
+.text h1 {
+    font-size: 3em; /* Default size */
+    line-height: 1.2;
     backdrop-filter: blur(10px);
 }
-.form-div{
-    color:rgb(129, 234, 250);
-    border-radius:20px;
-    padding: 0.2em 2em 2em 2em;
-    border-radius: 10px;
-    box-shadow: 0 20px 50px rgba(218, 215, 215, 0.599);
+
+.text h3 {
+    text-align: center;
     backdrop-filter: blur(10px);
-    margin-top:4em;
+    width: 100%; /* Use full width of .text */
+    line-height: 1.6em;
+    font-weight: normal;
+    margin-bottom: 2em; /* Reduce bottom margin */
 }
 
+.form-div {
+    color: rgb(129, 234, 250);
+    border-radius: 20px;
+    padding: 1em; /* Reduced padding */
+    box-shadow: 0 15px 30px rgba(218, 215, 215, 0.5);
+    backdrop-filter: blur(10px);
+    margin-top: 5%; /* Remove unnecessary margin */
+    flex-basis: 50%; /* Dynamically adjust width */
+    max-width: 35%; /* Limit maximum width */
+}
 
-.form-div:hover{
+.form-div:hover {
     background-color: white;
-    color: black; box-shadow: 0 0 50px 0 rgba(0, 175, 172, 0.916);
+    color: black;
+    box-shadow: 0 0 50px 0 rgba(0, 175, 172, 0.916);
 }
+
 .form-div:hover .h {
-  color:#00afaca4 ;
+    color: #00afaca4;
 }
 
-
-.hf{
-    margin-bottom:0.5em;
-
-    
+.hf {
+    margin-bottom: 0.5em;
 }
-p{
-    width:500px
+
+p {
+    width: 100%; /* Use full width of parent */
 }
+
 label.required::before {
     content: " *";
     color: red;
-    margin-right:1em;
+    margin-right: 1em;
 }
 
 .input {
-    width: 400px;
+    width: 100%; /* Use full width of parent */
     margin-top: 0.7rem;
     font-size: 1rem;
-    border: 1px solid   #007f7f;
+    border: 1px solid #007f7f;
     border-radius: 5px;
-    color:  #007f7f
-  }
-  textarea{
+    color: #007f7f;
+}
+
+textarea {
+    width: 100%; /* Use full width of parent */
     margin-top: 0.7rem;
     border-radius: 5px;
-   color: #007f7f;border-color:#007f7f
-  }
-.sub{
+    color: #007f7f;
+    border-color: #007f7f;
+}
+
+.sub {
     padding: 1rem 2rem;
-    width: 200px;
-    color:rgb(129, 234, 250);
+    width: 100%; /* Use full width of parent */
+    color: rgb(129, 234, 250);
     background-color: transparent;
     box-shadow: 0 0 50px 0 rgb(129, 234, 250);
     border-radius: 20px;
     cursor: pointer;
     font-size: 1rem;
-    margin-left:25%;
     font-weight: bold;
 }
-.form-div:hover .sub{
-    color:black;
+
+.form-div:hover .sub {
+    color: black;
     background-color: white;
-    box-shadow: none; 
-    border:2px solid black
+    box-shadow: none;
+    border: 2px solid black;
 }
 
-.input-label-text{
+.input-label-text {
     padding-bottom: 0.7em;
 }
-.err{
+
+.err {
     color: rgb(255, 0, 0);
-    display:inline;
+    display: inline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .super-div {
+
+        gap: 5em; /* Further reduce gap */
+    }
+
+    .text {
+        flex-basis: 45%; /* Slightly increase text width */
+        max-width: 45%;
+    }
+
+    .form-div {
+        flex-basis: 45%; /* Slightly decrease form width */
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 992px) {
+    .text h3 {
+        font-size: 0.9em; /* Reduce font size */
+        line-height: 1.4em; /* Compact paragraph */
+    }
+
+    .input, textarea {
+        font-size: 0.9rem; /* Reduce input font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .super-div {
+        flex-direction: column; /* Switch to column layout */
+        gap: 1em;
+        height: auto;
+     
+    }
+
+    .text {
+        margin-left: 0;
+        text-align: center;
+        flex-basis: 100%; /* Full width for text */
+        max-width: 100%;
+        margin-top:15em
+    }
+
+    .text h3 {
+        width: 90%; /* Use 90% width for paragraph */
+        margin-bottom: 2em;
+    }
+
+    .form-div {
+        margin-top: 2em;
+        width: 90%; /* Full width for form */
+        max-width: 90%;
+        padding: 1em;
+    }
+
+    .input, textarea {
+        width: 100%; /* Use full width of parent */
+    }
+
+    .sub {
+        margin-left: 0;
+        width: 100%; /* Full width for button */
+        max-width: 200px;
+    }
+}
+
+/* Extreme Narrow Screens (Below 600px) */
+@media (max-width: 600px) {
+    .super-div {
+        gap: 1em; /* Minimize gap */
+    }
+
+    .text h1 {
+        font-size: 2em; /* Reduce heading size further */
+        line-height: 1.1;
+    }
+
+    .text h3 {
+        font-size: 0.8em; /* Reduce paragraph size further */
+        line-height: 1.3em;
+        margin-bottom: 1em; /* Reduce bottom margin */
+    }
+
+    .form-div {
+        padding: 0.5em; /* Reduce padding */
+        box-shadow: 0 8px 15px rgba(218, 215, 215, 0.3); /* Lighten shadow */
+    }
+
+    .input, textarea {
+        font-size: 0.8rem; /* Reduce input font size further */
+        padding: 0.5em; /* Reduce internal padding */
+    }
+
+    .sub {
+        padding: 0.7rem 1rem; /* Reduce button padding */
+        font-size: 0.9rem; /* Reduce button font size */
+        max-width: 150px; /* Limit button width */
+    }
 }

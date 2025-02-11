@@ -1,104 +1,172 @@
+
+
+/* Main container */
 .about-us-container {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 2rem;
   position: relative;
-  overflow: hidden; 
+  min-height: 100vh; /* Ensure the container covers at least the viewport height */
+  background-image: url("/podcasty-girl.png"); /* Background image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Optional: Makes the background fixed while scrolling */
 }
 
+/* Semi-transparent overlay */
 .about-us-container::before {
-  content: ''; 
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("/podcasty-girl.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3; 
-  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+  z-index: 0; /* Ensure it stays behind the content */
 }
 
+/* Ensure all content is above the overlay */
+.hero-section,
+.about-content {
+  position: relative;
+  z-index: 1; /* Bring content above the overlay */
+}
+
+/* Hero section styles */
+.hero-section {
+  text-align: center;
+  color: white;
+  padding-bottom: 10%;
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 5%;
+}
+
+.hero-section .h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+  display:inline-block;
+}
+
+.hero-section .p1 {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+  
+}
+
+/* About content styles */
+.about-content {
+  margin-top: 3rem;
+  color: rgb(129, 234, 250);
+  width: 50%;
+  margin-left: 25%;
+  padding-bottom: 2rem; /* Add padding to ensure content doesn't touch the bottom */
+}
+
+.about-content section {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(218, 215, 215, 0.599);
+  backdrop-filter: blur(10px);
+}
+
+.about-content .h2 {
+  font-size: 2rem;
+  color: #007f7f;
+  
+}
+
+
+.about-content .p2 {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgb(129, 234, 250);
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* Hover effects */
+section:hover {
+  background-color: white;
+}
+
+section:hover .p2 {
+  color: black;
+}
+
+section:hover .h2 {
+  color: #00afaca4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .hero-section {
-    text-align: center;
-    color:  white;
-    padding-bottom: 10%;
-    width:40%;
-    margin-left:30%;
+     margin-top: 15em;;
+    width: 90%;
+    margin-left: 5%;
   }
-  .h1,.p1{
-    border-radius: 10px;backdrop-filter: blur(10px);
-    
-    
-  }
-  h1{
-    height: fit-content;
-    width:fit-content; margin:auto;
-  }
-  .p1{
-    width:fit-content;
-  }
- 
-  .hero-section h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-section p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .about-content {
-    margin-top: 3rem;
-    color:rgb(129, 234, 250);
-    width: 50%;
-    align-items: center;
-    justify-content: center;
-    margin-left: 25%;
 
+  .hero-section .h1 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
   }
-  
-  .about-content section {
-    margin-bottom: 2rem;
-    color:rgb(129, 234, 250);
-  }
-  
-  .about-content h2 {
-    font-size: 2rem;
-    color: #007f7f;
-  }
-  
-  .about-content p {
+
+  .hero-section .p1 {
     font-size: 1rem;
-    line-height: 1.6;
-    color:rgb(129, 234, 250);
   }
-  
-  .our-story,
-  .our-mission,
-  .our-team {
-   
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 20px 30px rgba(218, 215, 215, 0.599);
-    backdrop-filter: blur(10px);
 
+  .about-content {
+    width: 90%;
+    margin-left: 5%;
   }
-  section:hover{
-    background-color: white;
+
+  .about-content section {
+    padding: 1rem;
   }
-  
-  .our-story h2,
-  .our-mission h2,
-  .our-team h2 {
-    color:rgb(129, 234, 250);
+
+  .about-content .h2 {
+    font-size: 1.5rem;
   }
-   section:hover .p2 {
-    color: black; 
+
+  .about-content .p2 {
+    font-size: 0.9rem;
   }
-  section:hover h2{
-    color:#00afaca4;
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    
+    width: 100%;
+    margin-left: 0;
   }
+
+  .hero-section .h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+
+  .hero-section .p1 {
+    font-size: 0.9rem;
+  }
+
+  .about-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .about-content section {
+    padding: 0.8rem;
+  }
+
+  .about-content .h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-content .p2 {
+    font-size: 0.8rem;
+  }
+}

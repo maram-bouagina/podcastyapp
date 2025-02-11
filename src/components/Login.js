@@ -14,6 +14,7 @@ const Login = ({ onSwitchToSignup }) => {
   const [error, setError] = useState('');
 
   const auth = useAuth()
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -26,7 +27,15 @@ const Login = ({ onSwitchToSignup }) => {
 
         if (response.status === 200) {
             console.log('Logged in successfully!',response.data);
-            auth.login(email,response.data.access_token, response.data.userId );
+            console.log("Calling auth.login with:", {
+              email: email,
+              token: response.data.access_token,
+              userId: response.data.userId,
+              role: response.data.role
+          });
+            auth.login(email, response.data.access_token,
+            response.data.userId, response.data.role);
+            console.log("Auth Context after login:", auth);
             navigate('/home', { replace: true });
         }
     } catch (err) {

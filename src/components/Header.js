@@ -6,8 +6,8 @@ import { useAuth } from "./Auth";
 import './Header.css';
 import { useContext } from "react";
 import { SearchContext } from "./searchcontext"; 
-function Header() {
-  const {token, logout } = useAuth();
+function Header( {className}) {
+  const {token, logout,role } = useAuth();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [showSearch, setShowSearch] = useState(false); 
@@ -61,7 +61,7 @@ function Header() {
   }, [location]); 
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+    <header  className={`header ${isScrolled ? "scrolled" : ""} ${className || ""}`}>
   <div className="logo">
     <Link to="/">
       <img src="/Podcasty Logo.png" alt="Podcasty Logo" className="logo-img" />
@@ -78,14 +78,14 @@ function Header() {
         </button>
       </div >}
   
-  <ul className="nav-links">
-          { showAboutUs ||<li><button className="nav-btn" onClick={() => navigate('/AboutUs')}>About us</button></li>}
-          {showContactUs || <li><button className="nav-btn" onClick={() => navigate('/ContactUs')}>Contact us</button></li>}
-          {!showSearch &&  <li><button className="nav-btn" onClick={() => navigate('/LatestPodcasts')}>Latest podcasts</button></li>}
-          <li><button className="nav-btn" onClick={() => navigate('/MyPodcasts')}>My podcasts</button></li>
-          <li><button className="nav-btn" onClick={() => navigate('/AdminMessages')}>Contact for Admin</button></li>
-          
-        </ul>
+      <ul className="nav-links">
+    {showAboutUs || <li><button className="nav-btn" onClick={() => navigate('/AboutUs')}>About us</button></li>}
+    {showContactUs || <li><button className="nav-btn" onClick={() => navigate('/ContactUs')}>Contact us</button></li>}
+    {!showSearch && <li><button className="nav-btn" onClick={() => navigate('/LatestPodcasts')}>Latest podcasts</button></li>}
+    {token && <li><button className="nav-btn" onClick={() => navigate('/MyPodcasts')}>My podcasts</button></li>}
+    {token && (role === "admin" || role === "super-admin") && <li><button className="nav-btn" onClick={() => navigate('/AdminMessages')}>Contact for Admin</button></li>}
+    {role === "super-admin" && <li><button className="nav-btn" onClick={() => navigate('/super-admin')}>Super Admin</button></li>}
+</ul>
      
        <div className="container">
        {!token  && <button className="btn" onClick={() => navigate('/LoginSignUp')}>Log in / sign up</button>}

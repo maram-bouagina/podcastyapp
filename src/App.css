@@ -1,26 +1,35 @@
 /* src/index.css or src/App.css */
 
 /* Reset margin and padding for all elements */
+/* General Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
+
+
+
+
 /* Ensure the body takes full height */
 html, #root {
   height: 100%;
 }
 body {
-  background-image: url('/background-site.jpg'); /* Path to your image */
-  background-size: cover; /* Ensures the image covers the entire page */
-  background-repeat: no-repeat; /* Prevents tiling */
-  background-position: center; /* Centers the image */
+/*   background-image: url('/background-site.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; */
+  background-color: white;
   margin: 0; /* Removes default margin */
   padding: 0; /* Removes default padding */
   height: 100%; /* Ensures the body takes up the full height */
   display: flex;
   flex-direction: column; /* Ensure content is stacked vertically */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.6;
 }
 
 
