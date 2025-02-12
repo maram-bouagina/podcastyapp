@@ -13,6 +13,11 @@ function Header( {className}) {
   const [showSearch, setShowSearch] = useState(false); 
   const [showAboutUs, setShowAboutUs] = useState(false);
   const [showContactUs, setShowContactUs] = useState(false);
+
+  const [showMyPodcasts, setShowMyPodcasts] = useState(false);
+  const [LatestPodcasts, setLatestPodcasts] = useState(false);
+  const [AdminMessages, setAdminMessages] = useState(false);
+  const [SuperAdminPage, setSuperAdminPage] = useState(false);
   const { valueSearch, setValueSearch } = useContext(SearchContext)
 
   const location = useLocation(); // Get current route
@@ -36,29 +41,15 @@ function Header( {className}) {
 
 
   useEffect(() => {
-    
-    if (location.pathname === '/LatestPodcasts') {
-      setShowSearch(true);
-    } else {
-      setShowSearch(false); 
-    }
-  }, [location]); 
-  useEffect(() => {
-    
-    if (location.pathname === '/ContactUs') {
-      setShowContactUs(true);
-    } else {
-      setShowContactUs(false); 
-    }
-  }, [location]); 
-  useEffect(() => {
-    
-    if (location.pathname === '/AboutUs') {
-      setShowAboutUs(true);
-    } else {
-      setShowAboutUs(false); 
-    }
-  }, [location]); 
+    setShowSearch(location.pathname !== '/LatestPodcasts');
+    setLatestPodcasts(location.pathname !== '/LatestPodcasts');
+    setShowContactUs(location.pathname !== '/ContactUs');
+    setShowAboutUs(location.pathname !== '/AboutUs');
+    setShowMyPodcasts(location.pathname !== '/MyPodcasts');
+    setAdminMessages(location.pathname !== '/AdminMessages');
+    setSuperAdminPage(location.pathname !== '/super-admin');
+  }, [location]);;
+
 
   return (
     <header  className={`header ${isScrolled ? "scrolled" : ""} ${className || ""}`}>
@@ -68,7 +59,7 @@ function Header( {className}) {
     </Link>
   </div>
   <nav className="nav">
-    { showSearch && <div className="search-bar">
+    { !showSearch && <div className="search-bar">
         <input type="text" placeholder="Search" className="search-input"   value={valueSearch}
         onChange={(e) => setValueSearch(e.target.value)}/>
         <button className="search-btn">
@@ -79,13 +70,49 @@ function Header( {className}) {
       </div >}
   
       <ul className="nav-links">
-    {showAboutUs || <li><button className="nav-btn" onClick={() => navigate('/AboutUs')}>About us</button></li>}
-    {showContactUs || <li><button className="nav-btn" onClick={() => navigate('/ContactUs')}>Contact us</button></li>}
-    {!showSearch && <li><button className="nav-btn" onClick={() => navigate('/LatestPodcasts')}>Latest podcasts</button></li>}
-    {token && <li><button className="nav-btn" onClick={() => navigate('/MyPodcasts')}>My podcasts</button></li>}
-    {token && (role === "admin" || role === "super-admin") && <li><button className="nav-btn" onClick={() => navigate('/AdminMessages')}>Contact for Admin</button></li>}
-    {role === "super-admin" && <li><button className="nav-btn" onClick={() => navigate('/super-admin')}>Super Admin</button></li>}
-</ul>
+      {showAboutUs && (
+        <li>
+          <button className="nav-btn" onClick={() => navigate('/AboutUs')}>
+            About us
+          </button>
+        </li>
+      )}
+      {showContactUs && (
+        <li>
+          <button className="nav-btn" onClick={() => navigate('/ContactUs')}>
+            Contact us
+          </button>
+        </li>
+      )}
+      {LatestPodcasts && (
+        <li>
+          <button className="nav-btn" onClick={() => navigate('/LatestPodcasts')}>
+            Latest podcasts
+          </button>
+        </li>
+      )}
+      {showMyPodcasts && token && (
+        <li>
+          <button className="nav-btn" onClick={() => navigate('/MyPodcasts')}>
+            My podcasts
+          </button>
+        </li>
+      )}
+      {AdminMessages && token && (role === 'admin' || role === 'super-admin') && (
+        <li>
+          <button className="nav-btn" onClick={() => navigate('/AdminMessages')}>
+            Contact for Admin
+          </button>
+        </li>
+      )}
+      {SuperAdminPage && role === 'super-admin' && (
+        <li>
+          <button className="nav-btn" onClick={() => navigate('/super-admin')}>
+            Super Admin
+          </button>
+        </li>
+      )}
+    </ul>
      
        <div className="container">
        {!token  && <button className="btn" onClick={() => navigate('/LoginSignUp')}>Log in / sign up</button>}

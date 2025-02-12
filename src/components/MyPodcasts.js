@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "./Auth";
 import   "./MyPodcasts.css";
 import Header from "./Header";
-//import { useSelector } from 'react-redux';
+
 const MyPodcasts = () => {
   const [podcasts, setPodcasts] = useState([]);
   const [file, setFile] = useState(null);
@@ -36,7 +36,7 @@ const { userId, token } = useAuth()
     });
 
     if (response.ok) {
-      alert("Podcast ajouté avec succès!");
+      alert("Podcast added successfully!");
       window.location.reload();
     } else {
       alert("Erreur lors de l'upload");

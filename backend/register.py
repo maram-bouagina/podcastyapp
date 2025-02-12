@@ -17,25 +17,24 @@ class RegisterRequest(BaseModel):
     username: str
     email: str
     country: str
-    organization: str = None  # Optional field
+    organization: str = None  
     password: str
     role: str = "user" 
 
 @router.post("/create-admin/")
 def create_admin(user: RegisterRequest, db: Session = Depends(get_db), role: str = Depends(require_super_admin)):
-    # Ensure only "admin" or "user" roles can be created
+ 
     if user.role not in ["admin", "user"]:
         raise HTTPException(status_code=400, detail="Invalid role")
 
-    # Check if the email is already registered
+
     existing_user = db.query(User).filter(User.email == user.email).first()
     if existing_user:
         raise HTTPException(status_code=400, detail="Email already registered")
 
-    # Hash the password
+    
     hashed_password = pwd_context.hash(user.password)
 
-    # Create the new user
     new_user = User(
         username=user.username,
         email=user.email,

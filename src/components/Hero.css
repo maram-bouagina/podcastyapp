@@ -8,6 +8,7 @@
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       overflow: hidden;
       text-align: center; /* Center all text */
+      
     }
 
     .hero-bg-video {
@@ -188,6 +189,9 @@
 
     /* Media Query for 480px */
     @media (max-width: 480px) {
+      .hero{
+        padding-top:60%;
+      }
       .hero-title {
         font-size: 1.75rem; /* Smaller font size for very small screens */
       }

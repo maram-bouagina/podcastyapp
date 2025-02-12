@@ -206,36 +206,36 @@ textarea {
     }
 }
 
-/* Extreme Narrow Screens (Below 600px) */
+
 @media (max-width: 600px) {
     .super-div {
-        gap: 1em; /* Minimize gap */
+        gap: 1em; 
     }
 
     .text h1 {
-        font-size: 2em; /* Reduce heading size further */
+        font-size: 2em; 
         line-height: 1.1;
     }
 
     .text h3 {
-        font-size: 0.8em; /* Reduce paragraph size further */
+        font-size: 0.8em; 
         line-height: 1.3em;
-        margin-bottom: 1em; /* Reduce bottom margin */
+        margin-bottom: 1em; 
     }
 
     .form-div {
-        padding: 0.5em; /* Reduce padding */
-        box-shadow: 0 8px 15px rgba(218, 215, 215, 0.3); /* Lighten shadow */
+        padding: 0.5em; 
+        box-shadow: 0 8px 15px rgba(218, 215, 215, 0.3);
     }
 
     .input, textarea {
-        font-size: 0.8rem; /* Reduce input font size further */
-        padding: 0.5em; /* Reduce internal padding */
+        font-size: 0.8rem; 
+        padding: 0.5em; 
     }
 
     .sub {
-        padding: 0.7rem 1rem; /* Reduce button padding */
-        font-size: 0.9rem; /* Reduce button font size */
-        max-width: 150px; /* Limit button width */
+        padding: 0.7rem 1rem; 
+        font-size: 0.9rem; 
+        max-width: 150px;
     }
 }

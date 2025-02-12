@@ -5,7 +5,7 @@ const AdminMessages = () => {
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState(null);
 
-  // Fetch messages from the backend
+ 
   useEffect(() => {
     fetch("http://localhost:8000/admin/contacts")
       .then(response => response.json())

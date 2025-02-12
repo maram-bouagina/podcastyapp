@@ -1,32 +1,31 @@
-/* General Container Styling */
+
 .SuperDiv {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center; /* Center the container horizontally */
-  padding-top: 120px; /* Add padding to prevent content from overlapping with the header */
+  align-items: center; 
+  padding-top: 120px; 
   min-height: 100vh;
 }
 
 
 
-/* Admin Messages Container Styling */
 .admin-messages-container {
   max-width: 1000px;
-  width: 90%; /* Ensure it takes 90% of the width on smaller screens */
+  width: 90%; 
   padding: 30px;
   background: linear-gradient(135deg, #ffffff, #01504ea4);
   border-radius: 16px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto; 
 }
 
 .admin-messages-container:hover {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Title Styling */
+
 .admin-messages-title {
   font-size: 28px;
   font-weight: bold;
@@ -46,7 +45,7 @@
   margin: 10px auto 0;
 }
 
-/* Error Message Styling */
+
 .admin-messages-error {
   color: #d0021b;
   background: linear-gradient(135deg, #ffebee, #ffdde0);
@@ -57,8 +56,6 @@
   font-weight: 500;
   box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.1);
 }
-
-/* Table Styling */
 .admin-messages-table {
   width: 100%;
   border-collapse: collapse;
@@ -67,7 +64,6 @@
   font-size: 14px;
 }
 
-/* Table Header Styling */
 .admin-messages-table-header {
   background: linear-gradient(90deg, #01504ea4, #00afaca4);
   color: white;
@@ -86,12 +82,8 @@
   background: linear-gradient(90deg, #01504ea4, #00afaca4);
 }
 
-/* Table Row Styling */
-.admin-messages-table-row:nth-child(even) {
-  background-color: #f9f9ff;
-}
 
-/* Table Cell Styling */
+
 .admin-messages-table-cell {
   padding: 15px 20px;
   border: none;
@@ -99,7 +91,6 @@
   transition: all 0.3s ease;
 }
 
-/* Delete Button Styling */
 .admin-messages-delete-button {
   background: linear-gradient(135deg, #d0021b, #a90018);
   color: white;
@@ -123,28 +114,28 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .SuperDiv {
-    padding-top:450px; /* Reduce padding for smaller screens */
+    padding-top:450px; 
   }
 
   .admin-messages-container {
-    width: 95%; /* Increase width for smaller screens */
-    padding: 20px; /* Reduce padding for smaller screens */
+    width: 95%; 
+    padding: 20px; 
   }
 
   .admin-messages-title {
-    font-size: 24px; /* Reduce title size for smaller screens */
+    font-size: 24px; 
   }
 
   .admin-messages-table {
-    font-size: 12px; /* Reduce font size for smaller screens */
+    font-size: 12px; 
   }
 
   .admin-messages-table-header-cell,
   .admin-messages-table-cell {
-    padding: 10px 15px; /* Reduce padding for smaller screens */
+    padding: 10px 15px; 
   }
 }
 
@@ -152,22 +143,22 @@
 
 
   .admin-messages-container {
-    width: 100%; /* Full width for very small screens */
-    padding: 15px; /* Further reduce padding for very small screens */
+    width: 100%;
+    padding: 15px; 
   }
 
   .admin-messages-title {
-    font-size: 20px; /* Further reduce title size for very small screens */
+    font-size: 20px; 
   }
 
   .admin-messages-table {
     display: block;
-    overflow-x: auto; /* Enable horizontal scrolling for small screens */
+    overflow-x: auto; 
     white-space: nowrap;
   }
 
   .admin-messages-table-header-cell,
   .admin-messages-table-cell {
-    min-width: 100px; /* Ensure cells have a minimum width */
+    min-width: 100px;
   }
 }

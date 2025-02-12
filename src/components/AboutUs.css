@@ -1,19 +1,19 @@
 
 
-/* Main container */
+
 .about-us-container {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 2rem;
   position: relative;
-  min-height: 100vh; /* Ensure the container covers at least the viewport height */
-  background-image: url("/podcasty-girl.png"); /* Background image */
+  min-height: 100vh; 
+  background-image: url("/podcasty-girl.png"); 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Optional: Makes the background fixed while scrolling */
+  background-attachment: fixed; 
 }
 
-/* Semi-transparent overlay */
+
 .about-us-container::before {
   content: '';
   position: absolute;
@@ -21,18 +21,17 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
-  z-index: 0; /* Ensure it stays behind the content */
+  background-color: rgba(0, 0, 0, 0.3); 
+  z-index: 0; 
 }
 
-/* Ensure all content is above the overlay */
+
 .hero-section,
 .about-content {
   position: relative;
-  z-index: 1; /* Bring content above the overlay */
+  z-index: 1; 
 }
 
-/* Hero section styles */
 .hero-section {
   text-align: center;
   color: white;
@@ -57,13 +56,13 @@
   
 }
 
-/* About content styles */
+
 .about-content {
   margin-top: 3rem;
   color: rgb(129, 234, 250);
   width: 50%;
   margin-left: 25%;
-  padding-bottom: 2rem; /* Add padding to ensure content doesn't touch the bottom */
+  padding-bottom: 2rem; 
 }
 
 .about-content section {
