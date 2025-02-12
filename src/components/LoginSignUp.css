@@ -10,11 +10,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
-  max-width: 50%; /* Ensure it doesn't exceed half the width */
+  padding: 20px; /* Reduced padding for smaller screens */
+  max-width: 100%; /* Allow full width on smaller screens */
 }
-
-
 
 .left-side .text {
   backdrop-filter: blur(15px);
@@ -51,7 +49,10 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  max-width: 50%; /* Ensure it doesn't exceed half the width */
+  flex-direction: column;
+  width: 100%; /* Ensure full width by default */
+  min-width: 300px; /* Prevent shrinking below this width */
+  max-width: 100%; /* Prevent expanding beyond parent's width */
 }
 
 /* Media Queries for Responsiveness */
@@ -62,12 +63,27 @@
 
   .left-side {
     flex: 0.4; /* Left side takes 40% of the height on smaller screens */
-    padding: 50px;
+    padding: 50px; /* Adjust padding for smaller screens */
+  }
+
+  .left-side .text {
+    width: 90%; /* Adjust width for smaller screens */
+    margin-bottom: 20px; /* Reduce margin for smaller screens */
+    position: static; /* Remove fixed positioning for smaller screens */
+  }
+
+  .left-side .text h1 {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .left-side .text p {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
   }
 
   .right-side {
     flex: 0.6; /* Right side takes 60% of the height on smaller screens */
-    margin-left: 13%;
+    width: 100%; /* Ensure full width */
+    margin-left: 0; /* Remove margin */
   }
 }
 
@@ -76,8 +92,21 @@
     flex: 0.3; /* Left side takes 30% of the height on very small screens */
   }
 
+  .left-side .text {
+    width: 95%; /* Adjust width for very small screens */
+  }
+
+  .left-side .text h1 {
+    font-size: 2rem; /* Adjust font size for very small screens */
+  }
+
+  .left-side .text p {
+    font-size: 1rem; /* Adjust font size for very small screens */
+  }
+
   .right-side {
     flex: 0.7; /* Right side takes 70% of the height on very small screens */
-    margin-left: 13%;
+    width: 100%; /* Ensure full width */
+    margin-left: 0; /* Remove margin */
   }
 }

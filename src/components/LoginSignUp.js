@@ -15,7 +15,7 @@ const LoginSignUp = () => {
   };
 
   return (
-    <div className="login-signup-page">
+<div className="login-signup-page">
         <video 
           src="/Office Stock Footage - People Working As A Team  Group Meeting  Business Footage Free Download.mp4" 
           autoPlay 
