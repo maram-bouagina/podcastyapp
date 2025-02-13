@@ -1,4 +1,4 @@
-/* General Styles */
+
 .homeh1 {
   text-align: center;
   font-weight: bolder;
@@ -23,18 +23,17 @@
 
 .service-card {
   display: flex;
-  flex-direction: row; /* Place items side by side */
-  align-items: flex-start; /* Align items at the top */
-  gap: 40px; /* Reduced gap between text and image */
+  flex-direction: row; 
+  align-items: flex-start;
+  gap: 40px; 
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  width: 100%; /* Ensure the card takes full width */
+  width: 100%; 
 }
 
-/* Logo on Top */
 .service-icon {
-  margin-bottom: 10px; /* Space between logo and writing */
+  margin-bottom: 10px;
   display: flex;
-  justify-content: center; /* Center the logo horizontally */
+  justify-content: center; 
 }
 
 .icon {
@@ -49,32 +48,32 @@
   justify-content: center;
 }
 
-/* Writing on the Left */
+
 .hp {
   display: flex;
-  flex-direction: column; /* Stack title and paragraph vertically */
-  align-items: flex-start; /* Align writing to the left */
-  flex: 1; /* Allow the text to take up available space */
+  flex-direction: column; 
+  align-items: flex-start; 
+  flex: 1; 
 }
 
 .hp .service-title {
   font-size: xx-large;
-  margin: 0; /* Remove unnecessary margins */
+  margin: 0; 
 }
 
 .hp .servivce-p {
   font-size: x-large;
   color: #002b36;
-  margin-top: 5px; /* Minimal space between title and paragraph */
+  margin-top: 5px; 
 }
 
-/* Image on the Right */
+
 .image-container {
-  width: 300px; /* Fixed width for images */
+  width: 300px; 
   height: 300px;
   border-radius: 30px;
   overflow: hidden;
-  flex-shrink: 0; /* Prevent the image from shrinking */
+  flex-shrink: 0; 
 }
 
 .service-image {
@@ -86,43 +85,41 @@
   transform: scale(1.02);
 }
 
-/* Responsive Styles */
 
-/* For screens smaller than 768px (e.g., tablets and mobile devices) */
 @media (max-width: 768px) {
   .service-card {
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center-align items */
-    text-align: center; /* Center-align text */
-    gap: 20px; /* Reduce gap for stacked layout */
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+    gap: 20px;
   }
 
   .hp {
-    align-items: center; /* Center-align writing */
-    text-align: center; /* Center-align text */
+    align-items: center; 
+    text-align: center; 
   }
 
   .image-container {
-    width: 200px; /* Reduce image size */
+    width: 200px; 
     height: 200px;
-    margin-top: 20px; /* Add space between text and image */
+    margin-top: 20px; 
   }
 
   .hp .service-title,
   .hp .servivce-p {
-    font-size: large; /* Reduce font size for smaller screens */
+    font-size: large; 
   }
 }
 
-/* For screens smaller than 480px (e.g., small mobile devices) */
+
 @media (max-width: 480px) {
   .image-container {
-    width: 150px; /* Further reduce image size */
+    width: 150px;
     height: 150px;
   }
 
   .hp .service-title,
   .hp .servivce-p {
-    font-size: medium; /* Further reduce font size */
+    font-size: medium;
   }
 }

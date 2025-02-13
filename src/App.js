@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Home from './components/Home';  
 import AboutUs from './components/AboutUs';  
 import LoginSignUp from './components/LoginSignUp';
-import LatestPodcasts from './components/LatestPodcasts'; // Now accessible to all
+import LatestPodcasts from './components/LatestPodcasts'; 
 import ContactUs from './components/ContactUs';
 import MyPodcasts from './components/MyPodcasts';
 import './App.css';

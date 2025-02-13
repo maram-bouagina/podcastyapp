@@ -122,20 +122,20 @@
 
 .subscribe {
     margin-top: 1.5rem;
-    margin-left:25% /* Centre le texte horizontalement */
+    margin-left:25% 
 }
 
 .subscribe p {
-    margin: 0; /* Supprime tout espace inutile */
+    margin: 0; 
 }
 
 .subscribe button {
-    background-color: transparent; /* Supprime le fond */
+    background-color: transparent; 
     color: #007f7f;
     border: none;
     cursor: pointer;
     font-weight: bold;
-    text-decoration: underline; /* Ajoute un style visuel pour un lien */
+    text-decoration: underline; 
 }
 
 .subscribe-link:hover {

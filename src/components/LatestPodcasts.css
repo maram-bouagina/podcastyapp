@@ -4,13 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 80px; /* Default padding for larger screens */
+  padding-top: 80px; 
 }
 
-/* Adjust padding for smaller screens */
+
 @media (max-width: 768px) {
   .parent {
-    padding-top: 350px; /* Increase padding to account for the larger header */
+    padding-top: 350px; 
   }
 }
 .headerOtherC{
@@ -135,7 +135,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .video-container-Lp {
-    flex-direction: column-reverse; /* Reverse the order of items */
+    flex-direction: column-reverse; 
     align-items: center;
   }
 

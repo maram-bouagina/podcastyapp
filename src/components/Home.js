@@ -2,7 +2,7 @@
 import React from 'react';
 import { VideoIcon, Mic2, Upload } from 'lucide-react';
 import Hero from '../components/Hero';
-import './Home.css'; // To style your Home page
+import './Home.css'; 
 
 const Home = () => {
   return (

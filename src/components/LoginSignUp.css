@@ -1,7 +1,7 @@
 .login-signup-page {
   display: flex;
   height: 100vh;
-  flex-direction: row; /* Default to side-by-side layout */
+  flex-direction: row; 
 }
 
 .left-side {
@@ -10,35 +10,35 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px; /* Reduced padding for smaller screens */
-  max-width: 100%; /* Allow full width on smaller screens */
+  padding: 20px; 
+  max-width: 100%; 
 }
 
 .left-side .text {
   backdrop-filter: blur(15px);
-  padding: 1rem; /* Adjusted padding */
-  margin-bottom: 20px; /* Reduced margin for smaller screens */
-  width: 90%; /* Use percentage for responsive width */
-  max-width: 600px; /* Limit width on larger screens */
+  padding: 1rem; 
+  margin-bottom: 20px;
+  width: 90%;
+  max-width: 600px; 
   backdrop-filter: blur(10px);
   border-radius: 20px;
   box-shadow: 0 0 50px 0 rgba(0, 175, 172, 0.916);
-  position: static; /* Remove fixed positioning for better responsiveness */
+  position: static; 
 }
 
 .left-side .text h1 {
-  font-size: 2.5rem; /* Smaller font size for smaller screens */
+  font-size: 2.5rem; 
   margin: 0;
   background: linear-gradient(80deg, #007f7f, #7ffaf8a4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: bolder;
-  text-align: center; /* Center text */
+  text-align: center; 
 }
 
 .left-side .text p {
-  font-size: 1.2rem; /* Smaller font size for smaller screens */
+  font-size: 1.2rem;
   color: black;
   text-align: center;
 }
@@ -50,63 +50,63 @@
   align-items: center;
   padding: 20px;
   flex-direction: column;
-  width: 100%; /* Ensure full width by default */
-  min-width: 300px; /* Prevent shrinking below this width */
-  max-width: 100%; /* Prevent expanding beyond parent's width */
+  width: 100%;
+  min-width: 300px;
+  max-width: 100%; 
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 1024px) {
   .login-signup-page {
-    flex-direction: column; /* Stack vertically on smaller screens */
+    flex-direction: column; 
   }
 
   .left-side {
-    flex: 0.4; /* Left side takes 40% of the height on smaller screens */
-    padding: 50px; /* Adjust padding for smaller screens */
+    flex: 0.4; 
+    padding: 50px; 
   }
 
   .left-side .text {
-    width: 90%; /* Adjust width for smaller screens */
-    margin-bottom: 20px; /* Reduce margin for smaller screens */
-    position: static; /* Remove fixed positioning for smaller screens */
+    width: 90%; 
+    margin-bottom: 20px; 
+    position: static; 
   }
 
   .left-side .text h1 {
-    font-size: 2.5rem; /* Adjust font size for smaller screens */
+    font-size: 2.5rem; 
   }
 
   .left-side .text p {
-    font-size: 1.2rem; /* Adjust font size for smaller screens */
+    font-size: 1.2rem; 
   }
 
   .right-side {
-    flex: 0.6; /* Right side takes 60% of the height on smaller screens */
-    width: 100%; /* Ensure full width */
-    margin-left: 0; /* Remove margin */
+    flex: 0.6;
+    width: 100%; 
+    margin-left: 0; 
   }
 }
 
 @media (max-width: 768px) {
   .left-side {
-    flex: 0.3; /* Left side takes 30% of the height on very small screens */
+    flex: 0.3; 
   }
 
   .left-side .text {
-    width: 95%; /* Adjust width for very small screens */
+    width: 95%;
   }
 
   .left-side .text h1 {
-    font-size: 2rem; /* Adjust font size for very small screens */
+    font-size: 2rem; 
   }
 
   .left-side .text p {
-    font-size: 1rem; /* Adjust font size for very small screens */
+    font-size: 1rem;
   }
 
   .right-side {
-    flex: 0.7; /* Right side takes 70% of the height on very small screens */
-    width: 100%; /* Ensure full width */
-    margin-left: 0; /* Remove margin */
+    flex: 0.7; 
+    width: 100%; 
+    margin-left: 0; 
   }
 }

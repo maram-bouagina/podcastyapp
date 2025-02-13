@@ -1,4 +1,4 @@
-// features/auth/authSlice.js
+
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -16,13 +16,13 @@ const authSlice = createSlice({
       state.userId = userId;
       state.token = token;
       state.email = email;
-      // Optionally, you could also persist these values in localStorage here.
+      
     },
     logout: (state) => {
       state.userId = '';
       state.token = '';
       state.email = '';
-      // Optionally, clear localStorage here.
+   
     },
   },
 });

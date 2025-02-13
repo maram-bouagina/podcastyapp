@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import Signup from './Signup';
 import Login from './Login';
-import './LoginSignUp.css'; // For common styling of the container layout
+import './LoginSignUp.css'; 
 
 const LoginSignUp = () => {
-  const [showSignup, setShowSignup] = useState(false); // State to toggle between login and signup forms
+  const [showSignup, setShowSignup] = useState(false); 
 
   const toggleForm = () => {
-    setShowSignup(true); // Show signup form when clicked
+    setShowSignup(true);
   };
 
   const handleBack = () => {
-    setShowSignup(false); // Return to login form when "Back" is clicked
+    setShowSignup(false); 
   };
 
   return (
@@ -32,7 +32,7 @@ const LoginSignUp = () => {
     </div>
 
     <div className="right-side">
-      {/* If showSignup is true, render Signup form, otherwise render Login form */}
+     
       {showSignup ? (
         <Signup onBack={handleBack} />
       ) : (

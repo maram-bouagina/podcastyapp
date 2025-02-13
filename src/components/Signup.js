@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './signup.css'; // You can create a separate signup.css if needed
+import './signup.css'; 
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaRegFlag } from "react-icons/fa";
@@ -31,7 +31,7 @@ const Signup = ({ onBack }) => {
   const handleSignup = async (e) => {
     e.preventDefault();
 
-    //  Check required fields
+    
     if (!formData.username || !formData.email || !formData.country || !formData.password || !formData.confirmPassword) {
       setError("All fields except 'organization' are required.");
       return;

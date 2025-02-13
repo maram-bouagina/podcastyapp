@@ -20,11 +20,11 @@ function Header( {className}) {
   const [SuperAdminPage, setSuperAdminPage] = useState(false);
   const { valueSearch, setValueSearch } = useContext(SearchContext)
 
-  const location = useLocation(); // Get current route
+  const location = useLocation(); 
   const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) { // Adjust the threshold as needed
+      if (window.scrollY > 10) { 
         setIsScrolled(true);
       } else {
         setIsScrolled(false);

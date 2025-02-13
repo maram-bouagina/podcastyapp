@@ -54,7 +54,7 @@ const { userId, token } = useAuth()
         });
 
         if (response.ok) {
-          setPodcasts(podcasts.filter((podcast) => podcast.id !== id)); // Remove from state
+          setPodcasts(podcasts.filter((podcast) => podcast.id !== id)); 
           alert("Podcast deleted successfully!");
         } else {
           alert("Error deleting podcast.");

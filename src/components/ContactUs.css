@@ -1,4 +1,4 @@
-/* General Styles */
+
 ::selection {
     color: rgb(129, 234, 250);
     background-color: transparent;
@@ -9,17 +9,17 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around; /* Center content horizontally */
+    justify-content: space-around; 
     position: relative;
-    gap: 2em; /* Reduced gap for better spacing */
+    gap: 2em; 
     padding: 2rem;
 
-  min-height: 100vh; /* Ensure the container covers at least the viewport height */
-  background-image: url("/podcasty-girl.png"); /* Background image */
+  min-height: 100vh; 
+  background-image: url("/podcasty-girl.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Optional: Makes the background fixed while scrolling */
+  background-attachment: fixed; 
 }
 
 .super-div::before {
@@ -29,22 +29,22 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+    background-color: rgba(0, 0, 0, 0.3); 
     z-index: 0; 
 }
 
 .text {
     color: white;
     margin-bottom: 0;
-    flex-basis: 40%; /* Dynamically adjust width */
-    max-width: 40%; /* Limit maximum width */
+    flex-basis: 40%; 
+    max-width: 40%; 
     display: flex;
     flex-direction: column;
-    gap: 2em; /* Reduce gap for smaller screens */
+    gap: 2em;
 }
 
 .text h1 {
-    font-size: 3em; /* Default size */
+    font-size: 3em; 
     line-height: 1.2;
     backdrop-filter: blur(10px);
 }
@@ -52,21 +52,21 @@
 .text h3 {
     text-align: center;
     backdrop-filter: blur(10px);
-    width: 100%; /* Use full width of .text */
+    width: 100%; 
     line-height: 1.6em;
     font-weight: normal;
-    margin-bottom: 2em; /* Reduce bottom margin */
+    margin-bottom: 2em;
 }
 
 .form-div {
     color: rgb(129, 234, 250);
     border-radius: 20px;
-    padding: 1em; /* Reduced padding */
+    padding: 1em; 
     box-shadow: 0 15px 30px rgba(218, 215, 215, 0.5);
     backdrop-filter: blur(10px);
-    margin-top: 5%; /* Remove unnecessary margin */
-    flex-basis: 50%; /* Dynamically adjust width */
-    max-width: 35%; /* Limit maximum width */
+    margin-top: 5%; 
+    flex-basis: 50%; 
+    max-width: 35%; 
 }
 
 .form-div:hover {
@@ -84,7 +84,7 @@
 }
 
 p {
-    width: 100%; /* Use full width of parent */
+    width: 100%; 
 }
 
 label.required::before {
@@ -94,7 +94,7 @@ label.required::before {
 }
 
 .input {
-    width: 100%; /* Use full width of parent */
+    width: 100%; 
     margin-top: 0.7rem;
     font-size: 1rem;
     border: 1px solid #007f7f;
@@ -103,7 +103,7 @@ label.required::before {
 }
 
 textarea {
-    width: 100%; /* Use full width of parent */
+    width: 100%;
     margin-top: 0.7rem;
     border-radius: 5px;
     color: #007f7f;
@@ -112,7 +112,7 @@ textarea {
 
 .sub {
     padding: 1rem 2rem;
-    width: 100%; /* Use full width of parent */
+    width: 100%; 
     color: rgb(129, 234, 250);
     background-color: transparent;
     box-shadow: 0 0 50px 0 rgb(129, 234, 250);
@@ -138,38 +138,38 @@ textarea {
     display: inline;
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 1200px) {
     .super-div {
 
-        gap: 5em; /* Further reduce gap */
+        gap: 5em; 
     }
 
     .text {
-        flex-basis: 45%; /* Slightly increase text width */
+        flex-basis: 45%; 
         max-width: 45%;
     }
 
     .form-div {
-        flex-basis: 45%; /* Slightly decrease form width */
+        flex-basis: 45%;
         max-width: 45%;
     }
 }
 
 @media (max-width: 992px) {
     .text h3 {
-        font-size: 0.9em; /* Reduce font size */
-        line-height: 1.4em; /* Compact paragraph */
+        font-size: 0.9em; 
+        line-height: 1.4em;
     }
 
     .input, textarea {
-        font-size: 0.9rem; /* Reduce input font size */
+        font-size: 0.9rem; 
     }
 }
 
 @media (max-width: 768px) {
     .super-div {
-        flex-direction: column; /* Switch to column layout */
+        flex-direction: column; 
         gap: 1em;
         height: auto;
      
@@ -178,30 +178,30 @@ textarea {
     .text {
         margin-left: 0;
         text-align: center;
-        flex-basis: 100%; /* Full width for text */
+        flex-basis: 100%; 
         max-width: 100%;
         margin-top:15em
     }
 
     .text h3 {
-        width: 90%; /* Use 90% width for paragraph */
+        width: 90%; 
         margin-bottom: 2em;
     }
 
     .form-div {
         margin-top: 2em;
-        width: 90%; /* Full width for form */
+        width: 90%; 
         max-width: 90%;
         padding: 1em;
     }
 
     .input, textarea {
-        width: 100%; /* Use full width of parent */
+        width: 100%; 
     }
 
     .sub {
         margin-left: 0;
-        width: 100%; /* Full width for button */
+        width: 100%; 
         max-width: 200px;
     }
 }

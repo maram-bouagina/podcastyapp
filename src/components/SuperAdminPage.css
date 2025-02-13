@@ -1,4 +1,4 @@
-/* Main Container Styling */
+
 .SuperDivSuperAdmin {
     
     display: flex;
@@ -11,9 +11,9 @@
     background: white; 
 }
 
-/* Header Styling */
+
 .headerOtherC {
-    position: fixed; /* Fix header at the top */
+    position: fixed; 
     top: 0;
     left: 0;
     right: 0;
@@ -33,10 +33,10 @@
     }
 }
 
-/* Container Styling */
+
 .superAdmin-container {
     max-width: 600px;
-    margin: 100px auto 20px; /* Default margin for larger screens */
+    margin: 100px auto 20px;
     padding: 30px;
     border: 1px solid #ddd;
     border-radius: 12px;
@@ -59,7 +59,7 @@
     }
 }
 
-/* Title Styling */
+
 .create-admin-title {
     font-size: 28px;
     font-weight: bold;
@@ -80,7 +80,7 @@
     }
 }
 
-/* Form Styling */
+
 .admin-form {
     display: flex;
     flex-direction: column;
@@ -90,7 +90,6 @@
  ;
 }
 
-/* Input Field Styling */
 .form-input {
     padding: 12px;
     font-size: 16px;
@@ -105,7 +104,7 @@
     box-shadow: 0 0 8px #00afaca4(0, 123, 255, 0.5);
 }
 
-/* Error Message Styling */
+
 .error-message {
     color: red;
     font-size: 14px;
@@ -126,7 +125,7 @@
     }
 }
 
-/* Submit Button Styling */
+
 .submit-button {
     padding: 12px;
     font-size: 16px;

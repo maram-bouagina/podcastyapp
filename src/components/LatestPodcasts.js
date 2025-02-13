@@ -6,10 +6,10 @@ import Header from './Header';
 
 
 const LatestPodcasts = () => {
-  const { valueSearch, setValueSearch } = useContext(SearchContext); // Retrieve search term from context
-  const [videos, setVideos] = useState([]); // State to store fetched videos
-  const [selectedVideo, setSelectedVideo] = useState(null); // State to store the selected video
-  const [error, setError] = useState(null); // State to handle errors
+  const { valueSearch, setValueSearch } = useContext(SearchContext); 
+  const [videos, setVideos] = useState([]); 
+  const [selectedVideo, setSelectedVideo] = useState(null); 
+  const [error, setError] = useState(null); 
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -17,16 +17,16 @@ const LatestPodcasts = () => {
       try {
         let searchUrl = '';
         
-        // Check if valueSearch is empty or not
+       
         if (valueSearch) {
-          // If there's a search term, fetch videos based on that term
+      
           searchUrl = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBpw6J864zcY-z-dapQetpYHgdglgpzUu4&channelId=UCA7iyb3oUVwbg0ozi0DtsUg&q=${valueSearch}&part=snippet,id&order=date&maxResults=5`;
         } else {
-          // If there's no search term, fetch videos sorted by date
+        
           searchUrl = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBpw6J864zcY-z-dapQetpYHgdglgpzUu4&channelId=UCA7iyb3oUVwbg0ozi0DtsUg&part=snippet,id&order=date&maxResults=5`;
         }
 
-        // Make the API call
+        
         const response = await fetch(searchUrl);
         
         if (!response.ok) {
@@ -34,22 +34,22 @@ const LatestPodcasts = () => {
         }
 
         const data = await response.json();
-        setVideos(data.items); // Set fetched videos to state
-        setSelectedVideo(data.items[0]); // Set the first video as the default selected video
+        setVideos(data.items); 
+        setSelectedVideo(data.items[0]); 
       } catch (err) {
         console.error("Error fetching videos:", err);
         setError(err.message);
       }
     };
 
-    fetchVideos(); // Call fetchVideos whenever `valueSearch` changes
-  }, [valueSearch]); // Re-run whenever `valueSearch` changes
+    fetchVideos(); 
+  }, [valueSearch]); 
 
   if (error) {
     return <div>Error fetching videos: {error}</div>;
   }
 
-  // Function to clean the video title
+ 
   const cleanTitle = (title) => {
     const parser = new DOMParser();
     const decodedString = parser.parseFromString(title, "text/html").body.textContent || "";
